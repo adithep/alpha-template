@@ -8,7 +8,7 @@ Package.on_use(function (api, where) {
 });
 
 Package.on_test(function (api) {
-  api.use('template-control');
+  api.use('alpha-template');
 
   api.add_files('template-control_tests.js', ['client', 'server']);
 });
