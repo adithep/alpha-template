@@ -3,7 +3,7 @@ Package.describe({
 });
 
 Package.on_use(function (api, where) {
-  api.use(['coffeescript', 'core-lib', 'utilities', 'stylus', 'standard-app-packages']);
+  api.use(['coffeescript', 'core-lib', 'utilities', 'alpha-stylus', 'standard-app-packages']);
   api.add_files(['template-control.coffee', 'subscription.coffee', 'template-control.sty'], 'client');
 });
 
