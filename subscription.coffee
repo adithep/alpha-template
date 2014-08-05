@@ -1,13 +1,21 @@
-Session.set("subscription", false)
+ses.subscription = new Blaze.ReactiveVar()
+Deps.autorun ->
+  subscription.sub_list = Meteor.subscribe "list"
+  if subscription.sub_list.ready()
+    ses.subscription.set(true)
+
+
+###
 Deps.autorun ->
   if Meteor.user()
     subscription.sub_list = Meteor.subscribe "list"
     if subscription.sub_list.ready()
-      Session.set("subscription", true)
+      ses.subscription.set(true)
   else
     if subscription.sub_list
       subscription.sub_list.stop()
     if subscription.sub_humans
       subscription.sub_humans.stop()
-    Session.set("subscription", false)
+    ses.subscription.set(false)
   return
+###
