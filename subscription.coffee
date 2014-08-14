@@ -1,8 +1,8 @@
-ses.subscription = new Blaze.ReactiveVar()
+Session.set("subscription", false)
 Deps.autorun ->
   subscription.sub_list = Meteor.subscribe "list"
   if subscription.sub_list.ready()
-    ses.subscription.set(true)
+    Session.set("subscription", true)
 
 
 ###
