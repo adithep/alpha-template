@@ -1,6 +1,6 @@
 Session.set("subscription", false)
 Deps.autorun ->
-  subscription.sub_list = Meteor.subscribe "list"
+  subscription.sub_list = Meteor.subscribe("list", "marathon")
   if subscription.sub_list.ready()
     Session.set("subscription", true)
 
